@@ -22,7 +22,7 @@ function Offers() {
                 const listingsRef = collection(db, 'listings')
 
                 // create query
-                const q = query(listingsRef, where('offer', '==' , true), orderBy('timestamp', 'desc'), limit(10))
+                const q = query(listingsRef, where('offer', '==' , true), orderBy('timestamp', 'desc'), limit(3))
 
                 //Excute query
                 const querySnap = await getDocs(q)
@@ -56,7 +56,7 @@ function Offers() {
             const listingsRef = collection(db, 'listings')
 
             // create query
-            const q = query(listingsRef, where('offer', '==' , true), orderBy('timestamp', 'desc'), limit(10), startAfter(lastFetchedListing))
+            const q = query(listingsRef, where('offer', '==' , true), orderBy('timestamp', 'desc'), limit(5), startAfter(lastFetchedListing))
 
             //Excute query
             const querySnap = await getDocs(q)
